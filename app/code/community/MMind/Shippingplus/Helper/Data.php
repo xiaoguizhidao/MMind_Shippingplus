@@ -114,19 +114,20 @@ class MMind_Shippingplus_Helper_Data extends Mage_Core_Helper_Abstract
 	 */
 	public function getOrderAmount($_rangeprice = null)
 	{
-		$totals = Mage::getSingleton('checkout/cart')->getQuote()->getTotals();
+        $quote = Mage::getModel('checkout/session')->getQuote();
+        $quoteData = $quote->getData();
 
-		// Subtotal or grand total
-		switch ($this->getTypeRangePrice($_rangeprice)) {
-			case MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_SUBTOTAL:
-				return $totals["subtotal"]->getValue();
-				break;
-			case MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_GRANDTOTAL:
-				return $totals["grand_total"]->getValue();
-				break;
-			default:
-				return $totals["subtotal"]->getValue();
-		}
+        // Subtotal or grand total
+        switch($this->getTypeRangePrice($_rangeprice)){
+            case ISM_Ismshipping_Model_Config_Source_Rangeprice::TYPE_SUBTOTAL:
+                return $quoteData['subtotal'];
+                break;
+            case ISM_Ismshipping_Model_Config_Source_Rangeprice::TYPE_GRANDTOTAL:
+                return $quoteData['subtotal_with_discount'];
+                break;
+            default:
+                return $quoteData['subtotal'];
+        }
 	}
 
 	/**
