@@ -2,7 +2,7 @@
 	<sections>
 		<carriers>
 			<groups>
-				<mmind_shippingplus translate="label" module="shipping">
+				<mmshippingplus translate="label" module="shipping">
 					<label>MageMind Shipping Plus</label>
 					<frontend_type>text</frontend_type>
 					<sort_order>1</sort_order>
@@ -38,7 +38,7 @@
 						<condition_name>
 							<label>Condition</label>
 							<frontend_type>select</frontend_type>
-							<source_model>mmind_shippingplus/config_source_tablerate</source_model>
+							<source_model>mmshippingplus/config_source_tablerate</source_model>
 							<sort_order>4</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
@@ -47,7 +47,7 @@
                         <charge_type>
                             <label>Charge Type</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>mmind_shippingplus/config_source_charge</source_model>
+                            <source_model>mmshippingplus/config_source_charge</source_model>
                             <sort_order>5</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -110,7 +110,7 @@
                         <ship_price_rangeprice>
                             <label>Shipping Price Range Base</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>mmind_shippingplus/config_source_rangeprice</source_model>
+                            <source_model>mmshippingplus/config_source_rangeprice</source_model>
                             <sort_order>11</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -153,7 +153,7 @@
                         <import_tablerate translate="label">
                             <label>Import CSV File Tablerate</label>
                             <frontend_type>import</frontend_type>
-                            <backend_model>mmind_shippingplus/config_shippingplus</backend_model>
+                            <backend_model>mmshippingplus/config_shippingplus</backend_model>
                             <sort_order>16</sort_order>
                             <show_in_default>0</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -178,7 +178,7 @@
 							<show_in_store>0</show_in_store>
 						</sort_order>
 					</fields>
-				</mmind_shippingplus>
+				</mmshippingplus>
 			</groups>
 		</carriers>
 	</sections>

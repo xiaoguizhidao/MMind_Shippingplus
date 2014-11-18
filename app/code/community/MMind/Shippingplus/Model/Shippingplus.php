@@ -19,6 +19,6 @@ class MMind_Shippingplus_Model_Shippingplus extends Mage_Core_Model_Abstract
 {
 	public function _construct()
 	{
-		$this->_init('mmind_shippingplus/shippingplus');
+		$this->_init('mmshippingplus/shippingplus');
 	}
 }

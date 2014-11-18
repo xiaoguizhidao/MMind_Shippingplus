@@ -25,11 +25,11 @@ class MMind_Shippingplus_Model_Config_Source_Charge
 		$charge = array(
 			array(
 				'value' => self::TYPE_CHARGE_FIX,
-				'label' => Mage::helper('mmind_shippingplus')->__('Fix Charge')
+				'label' => Mage::helper('mmshippingplus')->__('Fix Charge')
 			),
 			array(
 				'value' => self::TYPE_CHARGE_PERCENTAGE,
-				'label' => Mage::helper('mmind_shippingplus')->__('Percentage Charge')
+				'label' => Mage::helper('mmshippingplus')->__('Percentage Charge')
 			)
 		);
 

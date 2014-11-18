@@ -10,14 +10,14 @@
  * It is also available through the world-wide-web at this URL:
  * http://www.magemind.com/magento-license
  *
- * @category   model
+ * @category   helper
  * @package    MMind_Shippingplus
  * @copyright  Copyright (c) 2014 MageMind (http://www.magemind.com)
  * @license    http://www.magemind.com/magento-license
  */
 class MMind_Shippingplus_Helper_Data extends Mage_Core_Helper_Abstract
 {
-	const XML_PATH_TYPE_RANGEPRICE = 'carriers/mmind_shippingplus/ship_price_rangeprice';
+	const XML_PATH_TYPE_RANGEPRICE = 'carriers/mmshippingplus/ship_price_rangeprice';
 
 	/**
 	 * Get customer's country code from shipping address

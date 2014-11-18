@@ -17,7 +17,7 @@
  */
 class MMind_Shippingplus_Model_Carrier_Shippingplus extends Mage_Shipping_Model_Carrier_Abstract
 {
-	protected $_code = 'mmind_shippingplus';
+	protected $_code = 'mmshippingplus';
 	protected $_default_condition_name = 'weight_destination';
 	protected $_free_ship_tablerate = -1;
 
@@ -57,12 +57,12 @@ class MMind_Shippingplus_Model_Carrier_Shippingplus extends Mage_Shipping_Model_
 		// Condition Name: Price Vs. Destination
 		if ($this->getConfigData('condition_name') != $this->_default_condition_name)
 			// The weight is now the price
-			$weight = Mage::helper('mmind_shippingplus')->getOrderAmount();
+			$weight = Mage::helper('mmshippingplus')->getOrderAmount();
 
 		// Get country, region and postcode data
-		$country = Mage::helper('mmind_shippingplus')->getCustomerCountryCode();
-		$region = Mage::helper('mmind_shippingplus')->getCustomerRegionCode();
-		$postcode = Mage::helper('mmind_shippingplus')->getCustomerPostcode();
+		$country = Mage::helper('mmshippingplus')->getCustomerCountryCode();
+		$region = Mage::helper('mmshippingplus')->getCustomerRegionCode();
+		$postcode = Mage::helper('mmshippingplus')->getCustomerPostcode();
 
 		// Free shipping by qty
 		$freeQty = 0;
@@ -87,7 +87,7 @@ class MMind_Shippingplus_Model_Carrier_Shippingplus extends Mage_Shipping_Model_
 		}
 
 		// Check tablerate with condition
-		$tablerate = Mage::getModel('mmind_shippingplus/shippingplus')->getCollection()->setOrder('weight', 'DESC')->addFieldToFilter('website_id', array('in' => $website_id))->addFieldToFilter('dest_country', array('in' => array(
+		$tablerate = Mage::getModel('mmshippingplus/shippingplus')->getCollection()->setOrder('weight', 'DESC')->addFieldToFilter('website_id', array('in' => $website_id))->addFieldToFilter('dest_country', array('in' => array(
 			'*',
 			$country
 		)))->addFieldToFilter('dest_zip', array('in' => array(
@@ -106,7 +106,7 @@ class MMind_Shippingplus_Model_Carrier_Shippingplus extends Mage_Shipping_Model_
 			if ($this->getConfigData('ship_kg_country'))
 				$kg_country = explode(',', $this->getConfigData('ship_kg_country'));
 
-			$country = Mage::helper('mmind_shippingplus')->getCustomerCountryCode(2);
+			$country = Mage::helper('mmshippingplus')->getCustomerCountryCode(2);
 
 			if (in_array($country, $kg_country)) {
 				if ($weight >= $this->getConfigData('ship_from_kg') && $weight <= $this->getConfigData('ship_to_kg'))
@@ -119,10 +119,10 @@ class MMind_Shippingplus_Model_Carrier_Shippingplus extends Mage_Shipping_Model_
 			if ($this->getConfigData('ship_price_country'))
 				$price_country = explode(',', $this->getConfigData('ship_price_country'));
 
-			$country = Mage::helper('mmind_shippingplus')->getCustomerCountryCode(2);
+			$country = Mage::helper('mmshippingplus')->getCustomerCountryCode(2);
 
 			if (in_array($country, $price_country)) {
-				$amount = Mage::helper('mmind_shippingplus')->getOrderAmount();
+				$amount = Mage::helper('mmshippingplus')->getOrderAmount();
 
 				if ($amount >= $this->getConfigData('ship_from_price') && $amount <= $this->getConfigData('ship_to_price'))
 					$ship_price = $this->getConfigData('ship_price_price');
@@ -138,7 +138,7 @@ class MMind_Shippingplus_Model_Carrier_Shippingplus extends Mage_Shipping_Model_
 			$charge = $tablerate->getFirstItem()->getCharge();
 
 			if ($charge > 0) {
-				$amount = Mage::helper('mmind_shippingplus')->getOrderAmount(MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_SUBTOTAL);
+				$amount = Mage::helper('mmshippingplus')->getOrderAmount(MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_SUBTOTAL);
 				// Charge type
 				if ($this->getConfigData('charge_type') == MMind_Shippingplus_Model_Config_Source_Charge::TYPE_CHARGE_FIX) {
 					// Fix price

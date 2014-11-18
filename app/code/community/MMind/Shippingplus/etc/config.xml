@@ -7,43 +7,43 @@
 	</modules>
 	<global>
 		<helpers>
-			<mmind_shippingplus>
+			<mmshippingplus>
 				<class>MMind_Shippingplus_Helper</class>
-			</mmind_shippingplus>
+			</mmshippingplus>
 		</helpers>
 		<models>
-			<mmind_shippingplus>
+			<mmshippingplus>
 				<class>MMind_Shippingplus_Model</class>
-				<resourceModel>mmind_shippingplus_mysql4</resourceModel>
-			</mmind_shippingplus>
-			<mmind_shippingplus_mysql4>
-				<class>MMind_Shippingplus_Model_Mysql4</class>
+				<resourceModel>mmshippingplus_resource</resourceModel>
+			</mmshippingplus>
+			<mmshippingplus>
+				<class>MMind_Shippingplus_Model_Resource</class>
 				<entities>
 					<shippingplus>
 						<table>mmind_shippingplus</table>
 					</shippingplus>
 				</entities>
-			</mmind_shippingplus_mysql4>
+			</mmshippingplus>
 		</models>
 		<resources>
-			<mmind_shippingplus_setup>
+			<mmshippingplus_setup>
 				<setup>
 					<module>MMind_Shippingplus</module>
 				</setup>
 				<connection>
 					<use>core_setup</use>
 				</connection>
-			</mmind_shippingplus_setup>
-			<mmind_shippingplus_write>
+			</mmshippingplus_setup>
+			<mmshippingplus_write>
 				<connection>
 					<use>core_write</use>
 				</connection>
-			</mmind_shippingplus_write>
-			<mmind_shippingplus_read>
+			</mmshippingplus_write>
+			<mmshippingplus_read>
 				<connection>
 					<use>core_read</use>
 				</connection>
-			</mmind_shippingplus_read>
+			</mmshippingplus_read>
 		</resources>
 	</global>
 	<frontend>
@@ -70,14 +70,14 @@
 	</adminhtml>
 	<default>
 		<carriers>
-			<mmind_shippingplus>
-				<model>mmind_shippingplus/carrier_shippingplus</model>
+			<mmshippingplus>
+				<model>mmshippingplus/carrier_shippingplus</model>
 				<active>0</active>
 				<title>Express Courier</title>
 				<method_name>Standard</method_name>
 				<active_ship_kg>0</active_ship_kg>
 				<active_ship_price>0</active_ship_price>
-			</mmind_shippingplus>
+			</mmshippingplus>
 		</carriers>
 	</default>
 </config>

@@ -22,11 +22,11 @@ class MMind_Shippingplus_Model_Config_Source_Tablerate
 		$tablerate = array(
 			array(
 				'value' => 'weight_destination',
-				'label' => Mage::helper('mmind_shippingplus')->__('Weight vs Destination')
+				'label' => Mage::helper('mmshippingplus')->__('Weight vs Destination')
 			),
 			array(
 				'value' => 'price_destination',
-				'label' => Mage::helper('mmind_shippingplus')->__('Price vs Destination')
+				'label' => Mage::helper('mmshippingplus')->__('Price vs Destination')
 			)
 		);
 

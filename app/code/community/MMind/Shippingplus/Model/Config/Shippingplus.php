@@ -19,6 +19,6 @@ class MMind_Shippingplus_Model_Config_Shippingplus extends Mage_Core_Model_Confi
 {
 	public function _afterSave()
 	{
-		Mage::getResourceModel('mmind_shippingplus/shippingplus_import')->uploadAndImport($this);
+		Mage::getResourceModel('mmshippingplus/shippingplus_import')->uploadAndImport($this);
 	}
 }

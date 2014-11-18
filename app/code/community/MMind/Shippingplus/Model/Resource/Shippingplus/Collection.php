@@ -15,11 +15,11 @@
  * @copyright  Copyright (c) 2014 MageMind (http://www.magemind.com)
  * @license    http://www.magemind.com/magento-license
  */
-class MMind_Shippingplus_Model_Mysql4_Shippingplus_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract
+class MMind_Shippingplus_Model_Resource_Shippingplus_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
 	public function _construct()
 	{
-		$this->_init('mmind_shippingplus/shippingplus');
+		$this->_init('mmshippingplus/shippingplus');
 	}
 
 }

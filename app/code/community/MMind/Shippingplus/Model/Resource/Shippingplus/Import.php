@@ -15,7 +15,7 @@
  * @copyright  Copyright (c) 2014 MageMind (http://www.magemind.com)
  * @license    http://www.magemind.com/magento-license
  */
-class MMind_Shippingplus_Model_Mysql4_Shippingplus_Import extends Mage_Core_Model_Resource_Db_Abstract
+class MMind_Shippingplus_Model_Resource_Shippingplus_Import extends Mage_Core_Model_Resource_Db_Abstract
 {
 	/**
 	 * Number of coloumns in tablerate file
@@ -45,7 +45,7 @@ class MMind_Shippingplus_Model_Mysql4_Shippingplus_Import extends Mage_Core_Mode
 	 */
 	protected function _construct()
 	{
-		$this->_init('mmind_shippingplus/shippingplus', 'mmind_shippingplus_id');
+		$this->_init('mmshippingplus/shippingplus', 'mmshippingplus_id');
 	}
 
 	/**
@@ -54,14 +54,14 @@ class MMind_Shippingplus_Model_Mysql4_Shippingplus_Import extends Mage_Core_Mode
 	 * @see MMind_Shippingplus_Model_Config_Shippingplus._afterSave()
 	 * @param Varien_Object $object
 	 * @throws Mage_Core_Exception
-	 * @return MMind_Shippingplus_Model_Mysql4_Shippingplus_Import
+	 * @return MMind_Shippingplus_Model_Resource_Shippingplus_Import
 	 ***/
 	public function uploadAndImport(Varien_Object $object)
 	{
-		if (empty($_FILES['groups']['tmp_name']['mmind_shippingplus']['fields']['import_tablerate']['value']))
+		if (empty($_FILES['groups']['tmp_name']['mmshippingplus']['fields']['import_tablerate']['value']))
 			return $this;
 
-		$csvFile = $_FILES['groups']['tmp_name']['mmind_shippingplus']['fields']['import_tablerate']['value'];
+		$csvFile = $_FILES['groups']['tmp_name']['mmshippingplus']['fields']['import_tablerate']['value'];
 		$website = Mage::app()->getWebsite($object->getScopeId());
 
 		$this->_importWebsiteId = (int)$website->getId();
@@ -75,7 +75,7 @@ class MMind_Shippingplus_Model_Mysql4_Shippingplus_Import extends Mage_Core_Mode
 		$headers = $io->streamReadCsv();
 		if ($headers === false || count($headers) < $this->tablerate_cols) {
 			$io->streamClose();
-			Mage::throwException(Mage::helper('mmind_shippingplus')->__('Invalid CSV Table Rates File Format'));
+			Mage::throwException(Mage::helper('mmshippingplus')->__('Invalid CSV Table Rates File Format'));
 		}
 
 		$adapter = $this->_getWriteAdapter();
@@ -121,13 +121,13 @@ class MMind_Shippingplus_Model_Mysql4_Shippingplus_Import extends Mage_Core_Mode
 		} catch (Exception $e) {
 			$io->streamClose();
 			Mage::logException($e);
-			Mage::throwException(Mage::helper('mmind_shippingplus')->__('An error occurred while import CSV Table rates.'));
+			Mage::throwException(Mage::helper('mmshippingplus')->__('An error occurred while import CSV Table rates.'));
 		}
 
 		$adapter->commit();
 
 		if ($this->_importErrors) {
-			$error = Mage::helper('mmind_shippingplus')->__('%1$d records have been imported. See the following list of errors for each record that has not been imported: %2$s', $this->_importedRows, implode(" \n", $this->_importErrors));
+			$error = Mage::helper('mmshippingplus')->__('%1$d records have been imported. See the following list of errors for each record that has not been imported: %2$s', $this->_importedRows, implode(" \n", $this->_importErrors));
 			Mage::throwException($error);
 		}
 
@@ -147,7 +147,7 @@ class MMind_Shippingplus_Model_Mysql4_Shippingplus_Import extends Mage_Core_Mode
 	{
 		// validate row
 		if (count($row) < $this->tablerate_cols) {
-			$this->_importErrors[] = Mage::helper('mmind_shippingplus')->__('Invalid CSV Table Rates format in the Row #%s', $rowNumber);
+			$this->_importErrors[] = Mage::helper('mmshippingplus')->__('Invalid CSV Table Rates format in the Row #%s', $rowNumber);
 			return false;
 		}
 
@@ -172,7 +172,7 @@ class MMind_Shippingplus_Model_Mysql4_Shippingplus_Import extends Mage_Core_Mode
 	 * Save import data batch
 	 *
 	 * @param array $data
-	 * @return MMind_Shippingplus_Model_Mysql4_Shippingplus_Import
+	 * @return MMind_Shippingplus_Model_Resource_Shippingplus_Import
 	 */
 	protected function _saveImportData(array $data)
 	{

@@ -25,11 +25,11 @@ class MMind_Shippingplus_Model_Config_Source_Rangeprice
 		$rangeprice = array(
 			array(
 				'value' => self::TYPE_SUBTOTAL,
-				'label' => Mage::helper('mmind_shippingplus')->__('Subtotal')
+				'label' => Mage::helper('mmshippingplus')->__('Subtotal')
 			),
 			array(
 				'value' => self::TYPE_GRANDTOTAL,
-				'label' => Mage::helper('mmind_shippingplus')->__('Grand Total')
+				'label' => Mage::helper('mmshippingplus')->__('Grand Total')
 			)
 		);
 
