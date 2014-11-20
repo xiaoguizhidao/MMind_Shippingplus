@@ -119,10 +119,10 @@ class MMind_Shippingplus_Helper_Data extends Mage_Core_Helper_Abstract
 
         // Subtotal or grand total
         switch($this->getTypeRangePrice($_rangeprice)){
-            case ISM_Ismshipping_Model_Config_Source_Rangeprice::TYPE_SUBTOTAL:
+            case MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_SUBTOTAL:
                 return $quoteData['subtotal'];
                 break;
-            case ISM_Ismshipping_Model_Config_Source_Rangeprice::TYPE_GRANDTOTAL:
+            case MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_GRANDTOTAL:
                 return $quoteData['subtotal_with_discount'];
                 break;
             default:
