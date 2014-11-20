@@ -16,14 +16,14 @@
 				<class>MMind_Shippingplus_Model</class>
 				<resourceModel>mmshippingplus_resource</resourceModel>
 			</mmshippingplus>
-			<mmshippingplus>
+			<mmshippingplus_resource>
 				<class>MMind_Shippingplus_Model_Resource</class>
 				<entities>
 					<shippingplus>
 						<table>mmind_shippingplus</table>
 					</shippingplus>
 				</entities>
-			</mmshippingplus>
+			</mmshippingplus_resource>
 		</models>
 		<resources>
 			<mmshippingplus_setup>
