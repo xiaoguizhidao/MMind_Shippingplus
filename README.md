@@ -1,7 +1,7 @@
 MMind_Shippingplus
 ==================
 
-Shipping Module for Magento.
+Shipping Module for Magento with multiple functions.
 
 # Features
 - shipping price with tablerate weight/destination
@@ -41,7 +41,7 @@ Add to your composer.json file this:
     ...
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "mmind/shippingplus": "1.0.0"
+        "mmind/shippingplus": "1.0.1"
     },
     ....
     "repositories": [
