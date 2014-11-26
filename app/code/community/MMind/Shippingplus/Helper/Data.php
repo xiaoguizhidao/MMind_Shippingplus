@@ -123,7 +123,7 @@ class MMind_Shippingplus_Helper_Data extends Mage_Core_Helper_Abstract
                 return $quoteData['subtotal'];
                 break;
             case MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_GRANDTOTAL:
-                return $quoteData['subtotal_with_discount'];
+                return $quoteData['grand_total'];
                 break;
             default:
                 return $quoteData['subtotal'];
