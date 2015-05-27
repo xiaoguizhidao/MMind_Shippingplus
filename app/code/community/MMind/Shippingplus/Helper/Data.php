@@ -120,13 +120,16 @@ class MMind_Shippingplus_Helper_Data extends Mage_Core_Helper_Abstract
         // Subtotal or grand total
         switch($this->getTypeRangePrice($_rangeprice)){
             case MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_SUBTOTAL:
-                return $quoteData['subtotal'];
+                if(isset($quoteData['subtotal']))
+                    return $quoteData['subtotal'];
                 break;
             case MMind_Shippingplus_Model_Config_Source_Rangeprice::TYPE_GRANDTOTAL:
-                return $quoteData['grand_total'];
+                if(isset($quoteData['grand_total']))
+                    return $quoteData['grand_total'];
                 break;
             default:
-                return $quoteData['subtotal'];
+                if(isset($quoteData['subtotal']))
+                    return $quoteData['subtotal'];
         }
 	}
 
