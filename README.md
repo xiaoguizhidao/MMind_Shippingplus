@@ -1,54 +1,40 @@
 MMind_Shippingplus
 ==================
+Custom Shipping Method for Magento 1.x CE
 
-Shipping Module for Magento with multiple functions.
+## Guide/Documentation
+https://github.com/magemindcom/MMind_Shippingplus/wiki
 
-# Features
+## Features
 - shipping price with tablerate weight/destination
 - shipping price with tablerate price/destination
 - shipping flat price (based on cart total or weight cart total)
 - free shipping
 - add import tablerate with multiple country, region, postcode divided by pipe '|'
 
-## Tablerate
+### Tablerate
 
 The module search in order: postcode, region, country.
 So if you have particular price for postcode they must be at the beginning of the tablerate.
 See tablerate_example.csv for more informations
 
-# Contributors
+## Stable version
+1.0.1-p2
+
+## Magento version
+- 1.7.x
+- 1.8.x
+- 1.9.x (last 1.9.2.1)
+
+## Requirements
+none
+
+## Install via
+- composer
+- modman
+
+## Composer code
+mmind/shippingplus
+
+## Contributors
 - Giuseppe Morelli
-
-# Stable version
-
-1.0.1
-- add import tablerate with multiple country, region, postcode divided by pipe '|'
-
-1.0.0
-- first release
-
-# MAGENTO Installation
-
-### via [modman](https://github.com/colinmollenhour/modman):
-<pre>
-modman clone git@github.com:magemindcom/MMind_Shippingplus.git  
-</pre>
-
-### via [composer](https://getcomposer.org/download/)
-Add to your composer.json file this:
-<pre>
-{
-    ...
-    "require": {
-        "magento-hackathon/magento-composer-installer": "*",
-        "mmind/shippingplus": "1.0.1"
-    },
-    ....
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/magemindcom/MMind_Shippingplus"
-        }
-    ],
-    .....
-}</pre>
